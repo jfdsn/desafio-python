@@ -1,8 +1,7 @@
 from django.db import models
-
 # Create your models here.
 
-class AvatarCharacter(models.Model):
+'''class AvatarCharacter(models.Model):
     name = models.CharField(max_length = 50)
     affiliation = models.CharField(max_length = 100)
     allies = models.CharField(max_length = 100)
@@ -10,4 +9,4 @@ class AvatarCharacter(models.Model):
     photoUrl = models.URLField()
      
     def __str__(self) -> str:
-        return super().__str__()
+        return super().__str__()'''

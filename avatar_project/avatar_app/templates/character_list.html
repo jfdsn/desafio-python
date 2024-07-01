@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personagens do Avatar</title>
+</head>
+<body>
+    <h1>Lista de Personagens do Avatar</h1>
+    <ul>
+        {% for character in characters %}
+            <li>
+                <h2>{{ character.name }}</h2>
+                <p>Afiliação: {{ character.affiliation }}</p>
+                <p>Aliados: {{ character.allies }}</p>
+                <p>Inimigos: {{ character.enemies }}</p>
+                <img src={{ character.photoUrl }}>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

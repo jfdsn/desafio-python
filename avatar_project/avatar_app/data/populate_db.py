@@ -1,4 +1,4 @@
-from handlers.api_handler import api_request
+'''from handlers.api_handler import api_request
 from handlers.translator_handler import translate
 from avatar_app.models import AvatarCharacter
 
@@ -25,3 +25,5 @@ def populate_avatar_character():
 
         character = AvatarCharacter(name = name, affiliation = affiliation, allies = allies, enemies = enemies, photoUrl = photoUrl)
         character.save()
+
+        print("Adicionado com sucesso!")'''
