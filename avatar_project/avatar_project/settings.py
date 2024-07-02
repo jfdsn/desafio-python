@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'avatar_app',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
