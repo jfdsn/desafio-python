@@ -52,7 +52,7 @@
                 </tr>
             </thead>
             <tbody id="character-list">
-                {% for character in characters %}
+                {% for character in page_obj %}
                     <tr class="text-center">
                         <td><h5>{{ character.name }}</h5></td>
                         <td>{{ character.affiliation }}</td>
@@ -67,6 +67,26 @@
                 {% endfor %}
             </tbody>
         </table>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center full-width">
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; primeira</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">anterior</a>
+                {% endif %}
+        
+                <span class="current">
+                    Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                </span>
+        
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">próxima</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">última &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
     </div>
     <!-- JS do Lightbox2 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>

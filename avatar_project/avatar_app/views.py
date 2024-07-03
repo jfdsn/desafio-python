@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.core.cache import cache
+from django.core.paginator import Paginator
 from .api_handler import api_request
 from .translator_handler import translate
 # Create your views here.
@@ -21,4 +22,8 @@ def avatar_character_list(request):
         character['name'] = translated_name
         character['affiliation'] = translated_affiliation
 
-    return render(request, 'character_list.html', {'characters': avatar_api_data})
+    paginator = Paginator(avatar_api_data, 6)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'character_list.html', {'page_obj': page_obj})
